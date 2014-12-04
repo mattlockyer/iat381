@@ -1,0 +1,38 @@
+
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<polymer-element name="main-screen" attributes="menuTitle mainTitle">
+
+<template>
+  <link rel="stylesheet" href="main-screen.css">
+  <core-scaffold>
+
+  <core-header-panel navigation flex>
+  <core-toolbar>
+  <span>{{menuTitle}}</span>
+</core-toolbar>
+<core-menu on-core-select="{{onMenuClick}}">
+
+<template repeat="{{section, i in sections}}">
+  <core-item num="{{i}}" label="{{section.name}}" icon="{{section.icon}}"></core-item>
+</template>
+
+</core-menu>
+</core-header-panel>
+
+<span tool>
+  {{mainTitle}}
+  <paper-shadow z="1"></paper-shadow>
+</span>
+
+<div fit class="content">
+  <core-pages id="pages" selected="0"></core-pages>
+</div>
+
+</core-scaffold>
+</template>
+
+<script src="main-screen.js"></script>
+
+</polymer-element>

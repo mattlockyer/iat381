@@ -6,20 +6,50 @@
 
 	<title>Mobile Application Design and Development</title>
 
-	<!-- 1. Load webcomponents.min.js for polyfill support. -->
+	<!-- Scripts -->
 	<script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
 
-	<!-- 2. Use an HTML Import to bring in the element. -->
-	<link rel="import" href="bower_components/core-ajax/core-ajax.html">
+	<!-- Core Element Components -->
+	<link rel="import" href="bower_components/core-toolbar/core-toolbar.html">
+	<link rel="import" href="bower_components/core-menu/core-menu.html">
+	<link rel="import" href="bower_components/core-item/core-item.html">
+	<link rel="import" href="bower_components/core-header-panel/core-header-panel.html">
+	<link rel="import" href="bower_components/core-drawer-panel/core-drawer-panel.html">
+	<link rel="import" href="bower_components/core-scaffold/core-scaffold.html">
+	<link rel="import" href="bower_components/core-icons/core-icons.html">
+	<link rel="import" href="bower_components/paper-shadow/paper-shadow.html">
+	<link rel="import" href="bower_components/core-pages/core-pages.html">
+
+	<!-- Custom Components -->
+	<link rel="import" href="components/main-screen/main-screen.html">
+
+	<!-- Stylesheets -->
 	<link rel="stylesheet" href="bower_components/roboto-fontface/roboto-fontface.css">
-
-
 	<link rel="stylesheet" href="main.css">
 
 </head>
 
 <body>
 
+	<main-screen menuTitle="iat381" mainTitle="Mobile Application Design and Development">
+
+	<div id="content" class="hidden">
+		<section name="Course Info" icon="thumb-up">
+			<h4>Course Info</h4>
+			<core-item label="Hey" icon="star"></core-item>
+		</section>
+		<section name="Lectures" icon="view-carousel">
+			Lectures
+		</section>
+		<section name="Workshops" icon="android">
+			Workshops
+		</section>
+		<section name="Assignments" icon="star">
+			Assignments
+		</section>
+	</div>
+
+</main-screen>
 
 </body>
 </html>
