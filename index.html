@@ -4,25 +4,17 @@
 <head>
 	<meta charset="utf-8">
 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
 	<title>Mobile Application Design and Development</title>
 
 	<!-- Scripts -->
 	<script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
-
-	<!-- Core Element Components -->
-	<link rel="import" href="bower_components/core-toolbar/core-toolbar.html">
-	<link rel="import" href="bower_components/core-menu/core-menu.html">
-	<link rel="import" href="bower_components/core-item/core-item.html">
-	<link rel="import" href="bower_components/core-header-panel/core-header-panel.html">
-	<link rel="import" href="bower_components/core-drawer-panel/core-drawer-panel.html">
-	<link rel="import" href="bower_components/core-scaffold/core-scaffold.html">
-	<link rel="import" href="bower_components/core-icons/core-icons.html">
-	<link rel="import" href="bower_components/paper-shadow/paper-shadow.html">
-	<link rel="import" href="bower_components/core-pages/core-pages.html">
-
+	<!-- Core + Paper Components -->
+	<link rel="import" href="../../bower_components/paper-progress/paper-progress.html">
+	<link rel="import" href="../../bower_components/paper-spinner/paper-spinner.html">
 	<!-- Custom Components -->
 	<link rel="import" href="components/main-screen/main-screen.html">
-
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="bower_components/roboto-fontface/roboto-fontface.css">
 	<link rel="stylesheet" href="main.css">
@@ -31,33 +23,70 @@
 
 <body>
 
-	<main-screen menuTitle="iat381" mainTitle="Mobile Application Design and Development">
+	<paper-progress indeterminate></paper-progress>
 
-	<div id="content" class="hidden">
-		<section name="Course Info" icon="thumb-up">
-			<h4>Course Info</h4>
-			<core-item label="Menu and Pages are Generated from Markup" icon="thumb-up"></core-item>
+	<!--
+	<div horizontal center-justified layout>
+		<paper-spinner active></paper-spinner>
+	</div>
+-->
 
-			<textarea>
+<main-screen menuTitle="iat381" mainTitle="Mobile Application Design and Development" class="hidden">
 
 <section name="Course Info" icon="thumb-up">
 	<h4>Course Info</h4>
-	<core-item label="Hey" icon="star"></core-item>
+	<core-item label="Menu and Pages are Generated from Markup" icon="thumb-up"></core-item>
+
+	<textarea>
+
+		<section name="Course Info" icon="thumb-up">
+			<h4>Course Info</h4>
+			<core-item label="Hey" icon="star"></core-item>
+		</section>
+
+	</textarea>
+
+
+	<h4>More stuff</h4>
+
+	<p>
+
+		Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+	</p>
+
+	<h4>More stuff</h4>
+
+	<p>
+
+		Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+	</p>
+
+	<h4>More stuff</h4>
+
+	<p>
+
+		Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+	</p>
+
 </section>
 
-			</textarea>
 
-		</section>
-		<section name="Lectures" icon="view-carousel">
-			Lectures
-		</section>
-		<section name="Workshops" icon="android">
-			Workshops
-		</section>
-		<section name="Assignments" icon="star">
-			Assignments
-		</section>
-	</div>
+<section name="Lectures" icon="android">
+	Lectures
+</section>
+
+
+<section name="Workshops" icon="android">
+	Workshops
+</section>
+
+
+<section name="Assignments" icon="star">
+	Assignments
+</section>
 
 </main-screen>
 

@@ -1,8 +1,8 @@
 
-/* application font */
+
 core-scaffold {
-	font-family: sans-serif;
-	color:rgb(33, 33, 33);
+	font-family:'Roboto';
+	color:#222;
 }
 
 /* title bar of the right panel */
@@ -14,23 +14,24 @@ core-scaffold::shadow core-toolbar {
 core-scaffold::shadow core-header-panel {
 	background:#fff;
 }
-
 /* menu bar of the left panel */
 core-toolbar {
-	background:#fff;
-	color:rgb(3, 169, 244);
+	background:#eee;
 }
-
 /* content of the left panel */
 core-header-panel {
 	background:#fff;
 }
 
-.content {
-	padding: 20px;
+core-animated-pages section > div {
+	background:#fff;
+	margin:16px;
 }
 
-textarea {
-	width:100%;
-	height:64px;
+core-animated-pages core-icon-button {
+	color:#03a9f4;
+}
+
+.active {
+	font-weight:bold;
 }

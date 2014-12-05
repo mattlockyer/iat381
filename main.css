@@ -1,9 +1,21 @@
 
 
-* {
-	font-family:'Roboto';
-}
 
 .hidden {
 	display:none;
+}
+
+paper-progress {
+	position:fixed;
+	top:0px;
+	left:0px;
+	width:100%;
+}
+
+paper-progress::shadow #progressContainer {
+  background-color:#eee;
+}
+
+paper-progress::shadow #activeProgress {
+  background-color:#03a9f4;
 }
