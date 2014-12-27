@@ -32,6 +32,15 @@ core-animated-pages core-icon-button {
 	color:#03a9f4;
 }
 
+#menu {
+	margin:0px;
+	margin-top:12px;
+}
+
+#menu core-item {
+	padding-left:12px;
+}
+
 .active {
 	font-weight:bold;
 }
