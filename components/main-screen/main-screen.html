@@ -20,27 +20,29 @@
 <polymer-element name="main-screen" attributes="menuTitle mainTitle">
 
 <template>
-  <link rel="stylesheet" href="main-screen.css">
+	<link rel="stylesheet" href="main-screen.css">
 
+	<core-scaffold id="scaffold" mode="fixed" responsiveWidth="5000px">
 
+	<core-header-panel navigation flex mode="standard">
 
-  <core-scaffold id="scaffold" mode="waterfall" responsiveWidth="5000px">
+	<core-toolbar>
 
+	<span flex>{{menuTitle}}</span>
 
+	<div class="icon button" on-click="{{onMenuClose}}">
+		<core-icon icon="close">
+		<paper-ripple class="circle recenteringTouch" fit></paper-ripple>
+	</core-icon>
+</div>
 
-  <core-header-panel navigation flex mode="standard">
-
-  <core-toolbar>
-  <span flex>{{menuTitle}}</span>
-  <core-icon-button icon="close" on-click="{{onMenuClose}}"></core-icon-button>
-    
 </core-toolbar>
 
 <core-menu id="menu" on-core-select="{{onMenuClick}}">
 
 <template repeat="{{section, i in sections}}">
-  <core-item num="{{i}}" label="{{section.name}}" icon="{{section.icon}}">
-  <paper-ripple fit></paper-ripple>
+	<core-item num="{{i}}" label="{{section.name}}" icon="{{section.icon}}">
+	<paper-ripple fit></paper-ripple>
 </core-item>
 </template>
 
@@ -49,7 +51,7 @@
 </core-header-panel>
 
 <span tool>
-  {{mainTitle}}
+	{{mainTitle}}
 </span>
 
 <core-animated-pages id="pages" selected="0" transitions="cross-fade-all"></core-pages>
@@ -58,6 +60,18 @@
 
 </core-scaffold>
 
+
+<!-- Extra Elements to be copied into the scaffold after initialization !-->
+
+<div id="menuNext" class="icon button right hidden" on-click="{{onMenuOpen}}">
+	<core-icon icon="arrow-forward">
+	<paper-ripple class="circle recenteringTouch" fit></paper-ripple>
+</core-icon>
+
+<div id="menuPrev" class="icon button left hidden" on-click="{{onMenuOpen}}">
+	<core-icon icon="arrow-back">
+	<paper-ripple class="circle recenteringTouch" fit></paper-ripple>
+</core-icon>
 
 
 </template>

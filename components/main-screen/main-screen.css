@@ -26,9 +26,13 @@ core-header-panel {
 core-animated-pages section > div {
 	background:#fff;
 	margin:16px;
+	margin-bottom:52px;
 }
 
-core-animated-pages core-icon-button {
+core-animated-pages > section {
+}
+
+core-animated-pages core-icon {
 	color:#03a9f4;
 }
 
@@ -43,4 +47,20 @@ core-animated-pages core-icon-button {
 
 .active {
 	font-weight:bold;
+}
+
+.button-wrap {
+	margin-top:12px;
+}
+
+.right {
+	float:right;
+}
+
+.left {
+	float:left;
+}
+
+.hidden {
+	display:none;
 }
