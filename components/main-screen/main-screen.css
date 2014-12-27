@@ -23,6 +23,10 @@ core-header-panel {
 	background:#fff;
 }
 
+core-animated-pages a {
+	color:#03a9f4;
+}
+
 core-animated-pages section > div {
 	background:#fff;
 	margin:16px;
