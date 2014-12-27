@@ -26,6 +26,7 @@ Polymer("main-screen", {
   var scaffold = this.scaffold = this.$.scaffold;
   var menu = this.menu = this.$.menu;
   var pages = this.pages = this.$.pages;
+  this.sectionTitle = this.$.sectionTitle;
   //build sections array
   var children = this.children;
   var sections = this.sections = [];
@@ -108,6 +109,7 @@ attached:function() {
       if (this.sections[i].name === name) {
         this.pages.selected = i;
         this.menu.children[i+1].classList.add('core-selected');
+        this.sectionTitle.innerHTML = name;
         if (this.isMobile) {
           console.log('mobile');
           var page = this.pages.children[i];

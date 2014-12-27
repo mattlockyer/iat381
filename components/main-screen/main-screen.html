@@ -17,7 +17,7 @@
 <!-- Additional Core and Paper Components (add any specific for your pages) -->
 
 <!-- Custom Element -->
-<polymer-element name="main-screen" attributes="menuTitle mainTitle">
+<polymer-element name="main-screen" attributes="menuTitle">
 
 <template>
 	<link rel="stylesheet" href="main-screen.css">
@@ -50,9 +50,7 @@
 
 </core-header-panel>
 
-<span tool>
-	{{mainTitle}}
-</span>
+<span tool id="sectionTitle"></span>
 
 <core-animated-pages id="pages" selected="0" transitions="cross-fade-all"></core-pages>
 
