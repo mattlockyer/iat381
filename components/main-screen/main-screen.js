@@ -12,6 +12,7 @@ Polymer("main-screen", {
   *******************************/
   isMobile:false,
   currentPage:null,
+  resizePage:null,
   /*******************************
   * Events
   *******************************/
@@ -94,11 +95,22 @@ Polymer("main-screen", {
 
 attached:function() {
     //console.log('main screen attached');
+    var self = this;
+    window.onresize = function() {
+      self.resize(self.resizePage);
+    }
   },
 
   /*******************************
   * Methods
   *******************************/
+  resize:function(page) {
+    //majorly hacky but works...
+    page.style.height = this.scaffold.scroller.getBoundingClientRect().height + 'px';
+    page.style.overflow = 'scroll';
+    page.style.overflowX = 'hidden';
+  },
+
   changePage:function(name, back, replace) {
     if (name === this.currentPage) {
       return;
@@ -110,13 +122,8 @@ attached:function() {
         this.pages.selected = i;
         this.menu.children[i+1].classList.add('core-selected');
         this.sectionTitle.innerHTML = name;
-        if (this.isMobile) {
-          console.log('mobile');
-          var page = this.pages.children[i];
-          page.style.height = this.scaffold.scroller.getBoundingClientRect().height + 'px';
-          page.style.overflow = 'scroll';
-          page.style.overflowX = 'hidden';
-        }
+        //resize page hack for polymer container
+        this.resize(this.resizePage = this.pages.children[i]);
       }
     }
     if (back) return;
