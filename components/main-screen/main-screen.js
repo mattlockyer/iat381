@@ -25,6 +25,7 @@ Polymer("main-screen", {
   //console.log('main screen ready');
   var self = this;
   var scaffold = this.scaffold = this.$.scaffold;
+  var toolbar = this.toolbar = this.$.toolbar;
   var menu = this.menu = this.$.menu;
   var pages = this.pages = this.$.pages;
   this.sectionTitle = this.$.sectionTitle;
@@ -45,10 +46,17 @@ Polymer("main-screen", {
     var page = document.createElement('section');
     var wrap = document.createElement('div');
     wrap.innerHTML = children[i].innerHTML;
-
+    //rewrite links to target blank
+    var links = wrap.querySelectorAll('a');
+    for (var j = 0; j < links.length; j++)
+      links[j].setAttribute('target', '_blank');
+    //resize elements
+    var elements = wrap.querySelectorAll('.resize');
+    for (var j = 0; j < elements.length; j++)
+      elements[j].setAttribute('height', window.innerHeight - 136 + 'px');
+    //add forward back buttons
     var buttonWrap = document.createElement('div');
     buttonWrap.classList.add('button-wrap');
-
     if (i > 0) {
        //back button
        var button = this.$.menuPrev.cloneNode(true);
@@ -77,11 +85,8 @@ Polymer("main-screen", {
       setTimeout(setFirstPage, 25);
       return;
     }
-    if (window.location.hash) {
-      self.changePage(window.location.hash.substring(1));
-    } else {
-      self.changePage(sections[0].name, false, true);
-    }
+    if (window.location.hash) self.changePage(window.location.hash.substring(1));
+    else self.changePage(sections[sections[0].name === 'Home' ? 1 : 0].name, false, true);
   };
   setFirstPage();
   //attach window history event listener
@@ -105,16 +110,19 @@ attached:function() {
   * Methods
   *******************************/
   resize:function(page) {
-    //majorly hacky but works...
-    page.style.height = this.scaffold.scroller.getBoundingClientRect().height + 'px';
-    page.style.overflow = 'scroll';
-    page.style.overflowX = 'hidden';
+    var self = this;
+    setTimeout(function() {
+      //majorly hacky but works...
+      var ph = page.children[0].getBoundingClientRect().height;
+      var h = self.scaffold.scroller.getBoundingClientRect().height;
+      page.style.height = h + 'px';
+      page.style.overflow = ph > h ? 'scroll' : 'hidden';
+      page.style.overflowX = 'hidden';
+    }, 1);
   },
 
   changePage:function(name, back, replace) {
-    if (name === this.currentPage) {
-      return;
-    }
+    if (name === this.currentPage) return;
     this.currentPage = name;
     for (var i = 0; i < this.sections.length; i++) {
       this.menu.children[i+1].classList.remove('core-selected');
@@ -127,8 +135,11 @@ attached:function() {
       }
     }
     if (back) return;
+    //update history
     if (!replace) history.pushState({}, 'iat381 - ' + name, window.location.href.split('#')[0] + '#' + name);
     else history.replaceState({}, 'iat381 - ' + name, window.location.href.split('#')[0] + '#' + name);
+    //close drawer
+    this.scaffold.closeDrawer();
   },
 
   onMenuClose:function() {
