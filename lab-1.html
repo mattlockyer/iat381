@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>IAT 381 - Mobile Application Design and Development</title>
+
+  <!-- Scripts -->
+  <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+  <!-- Custom Components -->
+  <link rel="import" href="components/main-screen/main-screen.html">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="main.css">
+
+</head>
+
+<body>
+
+  <main-screen menuTitle="Lecture 1" class="hidden">
+
+    <section name="IDE" icon="star">
+      <h3>
+        Where to write code
+      </h3>
+      <ul>
+        <li>Atom</li>
+        <li>TextWrangler</li>
+        <li>Sublime Text</li>
+        <li>Vim (if you dare. If you really want, and you have OS X installed, try macvim)</li>
+        <li>Emacs (if you also dare)</li>
+      </ul>
+    </section>
+
+    <section name='Servers' icon='star'>
+      <h3>To get it out of the way... Servers</h3>
+      <p>There are cases where Chrome simply doesn't like if your web page accesses remote information from a different protocol. And, most other remote information are sitting behind an HTTP server.</p>
+      <p>Although, later on, we will not need a web server, but for this lab, and the next few ones, you will need one.</p>
+      <ul>
+        <li>XAMPP (on Windows, OS X, many Linux Distros)</li>
+        <li>WAMP (on Windows)</li>
+        <li>MAMP (on OS X)</li>
+        <li>LAMP (on many Linux Distros)</li>
+        <li>nws (using Node.js)</li>
+        <li>http-server (using Node.js)</li>
+      </ul>
+    </section>
+
+    <section name='Git' icon='star'>
+      <h3>Most important: managing versions of your app, using Git.</h3>
+      <p>In this class, we will be using Git (or the GitHub client) and GitHub</p>
+      <p>So install a Git client, and create an account on GitHub.</p>
+    </section>
+
+    <section name='DOM' icon='star'>
+      <h3>How to lay out your page</h3>
+      <p>The HTML you write tells the browser on how to build a tree.</p>
+      <p>Each leaf of the node represents a box that contains text and images, and you can style these boxes (almost) however you like using CSS attributes.</p>
+    </section>
+
+    <section name='CSS' icon='star'>
+      <h3>Styling your page</h3>
+      <p>CSS is used to style your pages.</p>
+      <p>When writing CSS, don't think of it as just styling your page. Think of it as a language to query the DOM, and then applying specific attributes to the queried DOM elements.</p>
+    </section>
+
+    <section name='JavaScript' icon='star'>
+      <h3>Giving your app life</h3>
+      <p>On most (if not, all) browsers, JavaScript is used for adding interactivity to your applications.</p>
+      <p>Think of JavaScript as being bolted on to the browser, with features injected into the language to modify the web page's content (more specifically, the DOM).</p>
+    </section>
+
+    <section name='Challenge' icon='star'>
+      <h3>Create a GitHub repo with a custom Bootstrap theme</h3>
+    </section>
+
+  </main-screen>
+
+</body>
+</html>
