@@ -54,6 +54,15 @@ Polymer("main-screen", {
     var elements = wrap.querySelectorAll('.resize');
     for (var j = 0; j < elements.length; j++)
       elements[j].setAttribute('height', window.innerHeight - 136 + 'px');
+
+    //forward back pages
+    var goBack = function() {
+      if (pages.selected - 1 !== -1) self.changePage(sections[pages.selected - 1].name);
+    }
+    var goForward = function() {
+      if (pages.selected + 1 !== sections.length) self.changePage(sections[pages.selected + 1].name);
+    }
+
     //add forward back buttons
     var buttonWrap = document.createElement('div');
     buttonWrap.classList.add('button-wrap');
@@ -61,18 +70,14 @@ Polymer("main-screen", {
        //back button
        var button = this.$.menuPrev.cloneNode(true);
        button.classList.remove('hidden');
-       button.onclick = function() {
-        self.changePage(sections[pages.selected - 1].name);
-      };
+       button.onclick = goBack;
       buttonWrap.appendChild(button);
     }
     if (i < children.length - 1) {
        //forward button
        var button = this.$.menuNext.cloneNode(true);
        button.classList.remove('hidden');
-       button.onclick = function() {
-        self.changePage(sections[pages.selected + 1].name);
-      };
+       button.onclick = goForward;
       buttonWrap.appendChild(button);
     }
     wrap.appendChild(buttonWrap);
@@ -93,6 +98,25 @@ Polymer("main-screen", {
   window.onpopstate = function(event) {
     self.changePage(window.location.hash.substring(1), true);
   };
+  //keydown
+  window.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37: goBack(); break;
+      case 39: goForward(); break;
+    }
+  }
+  //touch
+  var mc = new Hammer(document.body);
+  mc.get('pan').set({ direction: Hammer.DIRECTION_ALL });
+  // listen to events...
+  var swipeTime = 0;
+  mc.on("panleft panright panup pandown", function(e) {
+    switch (e.type) {
+      case 'panleft': if (Date.now() - swipeTime > 250) { swipeTime = Date.now(); goForward(); } break;
+      case 'panright': if (Date.now() - swipeTime > 250) { swipeTime = Date.now(); goBack(); } break;
+    }
+  });
+
   //show
   this.classList.remove('hidden');
 
