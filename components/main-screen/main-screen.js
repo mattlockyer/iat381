@@ -148,6 +148,7 @@ attached:function() {
   changePage:function(name, back, replace) {
     if (name === this.currentPage) return;
     this.currentPage = name;
+    name = decodeURIComponent(name);
     for (var i = 0; i < this.sections.length; i++) {
       this.menu.children[i+1].classList.remove('core-selected');
       if (this.sections[i].name === name) {
@@ -160,8 +161,8 @@ attached:function() {
     }
     if (back) return;
     //update history
-    if (!replace) history.pushState({}, 'iat381 - ' + name, window.location.href.split('#')[0] + '#' + name);
-    else history.replaceState({}, 'iat381 - ' + name, window.location.href.split('#')[0] + '#' + name);
+    if (!replace) history.pushState({}, 'iat381 - ' + name, window.location.href.split('#')[0] + '#' + encodeURIComponent(name));
+    else history.replaceState({}, 'iat381 - ' + name, window.location.href.split('#')[0] + '#' + encodeURIComponent(name));
     //close drawer
     this.scaffold.closeDrawer();
   },
