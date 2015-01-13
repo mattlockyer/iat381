@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>IAT 381 - Mobile Application Design and Development</title>
+
+  <!-- Scripts -->
+  <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+  <!-- Custom Components -->
+  <link rel="import" href="components/main-screen/main-screen.html">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="main.css">
+
+</head>
+
+<body>
+
+  <main-screen menuTitle="Lecture 1" class="hidden">
+
+    <section name="Intro" icon="star">
+      <h3>Lab 2</h3>
+      <p>In this lab, you will see</p>
+      <ul>
+        <li>Bower</li>
+        <li>Grunt</li>
+        <li>Yeoman</li>
+      </ul>
+    </section>
+
+    <section name='Terminal' icon='star'>
+      <h3>Using your computer as if it was the 1980s (almost)</h3>
+      <p>What we're going to be doing in this lab (and possibly in the remainder of this semester) is use the terminal for a lot of our stuff.</p>
+      <p>Some basic commands.</p>
+      <ul>
+        <li><code>cd</code> tells BASH to change the current working directory</li>
+        <li><code>ls</code> utility to view files that are in the current working directory</li>
+        <li><code>pwd</code> utility to view the current working directory</li>
+        <li><code>touch &lt;file name&gt;</code> create a new file (in the current working directory)</li>
+        <li><code>mkdir &lt;folder name&gt;</code> create a new directory (in the current working directory)</li>
+        <li><code>cp &lt;source file name&gt; &lt;destination name&gt;</code> copy the specified file to the destination</li>
+        <li><code>cp -r &lt;source folder name&gt; &lt;destination name&gt;</code> copy the specified folder to the destination</li>
+        <li><code>rm &lt;file name&gt;</code> delete a file</li>
+        <li><code>rm -r &lt;folder name&gt;</code> delete a folder</li>
+        <li><code>rm -f &lt;file name&gt;</code> force delete a file</li>
+        <li><code>rm -rf &lt;file or folder name&gt;</code> force delete anything</li>
+      </ul>
+    </section>
+
+    <section name="Node.js" icon="star">
+      <h3>Before moving on... We'll need to install Node.js.</h3>
+      <p>Node.js allows you to run JavaScript without the browser (well, the implications of the existence of Node.js is a lot more sophisticated than that, but I'm not going to go to the details on that).</p>
+      <p>You can install Node.js by going to nodejs.org and then running the installer, or, if you're on OS X and some Linux distro, you would install <a href='https://github.com/creationix/nvm'>nvm</a> and then use that to manage Node.js versions.</p>
+    </section>
+
+    <section name='Bower' icon='star'>
+      <h3>Automatically downloading jQuery, Bootstrap, etc., using Bower</h3>
+      <ul>
+        <li>First (assuming you've installed Node.js), run <code>npm install -g bower</code></li>
+        <li>Next, create a folder, change directory to it</li>
+        <li>As a practice, let's install jQuery. We'll run <code>bower install jquery</code></li>
+      </ul>
+    </section>
+
+    <section name='Grunt' icon='star'>
+      <h3>Running many tasks... From a single file</h3>
+      <p>If you wanted to different things in a single task, you would typically create a script file.</p>
+      <p>If you wanted many task, prior to Grunt (and the like), you would have had to create many script files.</p>
+      <p>With Grunt, you simply have one file: Gruntfile.js. And it's this file that has many tasks that you can run.</p>
+      <p>Although, we're not going to ask you to create a Grunt task, but for now, just install Grunt, by running `npm install -g grunt-cli`</p>
+    </section>
+
+    <section name='Yeoman' icon='star'>
+      <h3>Don't reinvent the wheel. Use Yeoman</h3>
+      <p>Yeoman is a tool for developers to easily create code generators.</p>
+      <p>In this lab, we'll be creating a simple AngularJS application.</p>
+      <p>For now, just install Yeoman, and a generator.</p>
+      <ul>
+        <li><code>npm install -g yo</code></li>
+        <li><code>npm install -g generator-angular</code></li>
+      </ul>
+    </section>
+
+    <section name='YourApp' icon='star'>
+      <h3>Generating our First Application!</h3>
+      <ul>
+        <li><code>mkdir my-app</code></li>
+        <li><code>cd my-app</code></li>
+        <li><code>yo angular myapp</code></li>
+        <li>When prompted, say no to SASS, say yes to Bootstrap, exclude <code>angular-cookies</code> and <code>angular-resource</code>, include <code>angular-messages</code></li>
+        <li>Just wait until everything is downloaded and compiled... It will take some time</li>
+        <li><code>grunt server</code></li>
+        <li><code>yo angular:controller contact</code></li>
+        <li><code>yo angular:route contact</code></li>
+        <li><code>yo angular:view contact</code></li>
+        <li><code>grunt</code></li>
+        <li><code>git init &amp;&amp; git add -A &amp;&amp; git commit -am 'initial commit'</code></li>
+        <li><code>git remote add origin &lt;your repo address&gt;</code></li>
+        <li><code>git push -u origin master</code></li>
+        <li><code>cd .. &amp;&amp; mkdir my-app-dist &amp;&amp; cd my-app-dist</code></li>
+        <li><code>git remote add origin &lt;your repo address&gt;</code></li>
+        <li><code>git checkout --orphan gh-pages</code></li>
+        <li><code>cp -r ../my-app/dist .</code></li>
+        <li><code>git add -A &amp;&amp; git commit -am 'initial commit'</code></li>
+        <li><code>git push -u origin gh-pages</code></li>
+      </ul>
+    </section>
+
+    <section name='Challenge' icon='star'>
+      <h3>Create a new page in your App, push it out to the remote repo, and compile and publish the app</h3>
+    </section>
+
+  </main-screen>
+
+</body>
+</html>
