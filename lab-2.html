@@ -31,6 +31,61 @@
       </ul>
     </section>
 
+<section name='Git' icon='star'>
+      <h3>Some Helpful Git Commands</h3>
+      
+<pre>
+<code>
+//make folder
+
+git init
+
+//add remote repo
+
+git remote add origin https://github.com/lauraLi035/iat381.git
+
+//add any new files
+
+git add .
+
+//what's happening?
+
+git status
+
+//tell git what i did
+
+git commit -am 'i made a repo'
+
+//push to the remote repo called origin from the master branch
+
+git push -u origin master
+
+//add a new branch that's live on github
+
+git branch -b 'gh-pages'
+
+//switch to the new branch (likely won't switch back)
+
+git checkout 'gh-pages'
+
+//add files, commit some stuff here, first time in branch use push --all -u
+
+git add .
+
+git commit -am 'changes'
+
+git push --all -u
+
+//typically once a new branch has been pushed I just have to do
+
+git push
+
+</code>
+  
+</pre>
+
+</section>
+    
     <section name='Terminal' icon='star'>
       <h3>Using your computer as if it was the 1980s (almost)</h3>
       <p>What we're going to be doing in this lab (and possibly in the remainder of this semester) is use the terminal for a lot of our stuff.</p>
