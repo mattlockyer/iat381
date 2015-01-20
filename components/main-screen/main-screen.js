@@ -106,16 +106,18 @@ Polymer("main-screen", {
     }
   }
   //touch
-  var mc = new Hammer(document.body);
-  mc.get('pan').set({ direction: Hammer.DIRECTION_ALL });
-  // listen to events...
-  var swipeTime = 0;
-  mc.on("panleft panright panup pandown", function(e) {
-    switch (e.type) {
-      case 'panleft': if (Date.now() - swipeTime > 250) { swipeTime = Date.now(); goForward(); } break;
-      case 'panright': if (Date.now() - swipeTime > 250) { swipeTime = Date.now(); goBack(); } break;
-    }
-  });
+  if (this.isMobile) {
+    var mc = new Hammer(document.body);
+    mc.get('pan').set({ direction: Hammer.DIRECTION_ALL });
+    // listen to events...
+    var swipeTime = 0;
+    mc.on("panleft panright panup pandown", function(e) {
+      switch (e.type) {
+        case 'panleft': if (Date.now() - swipeTime > 250) { swipeTime = Date.now(); goForward(); } break;
+        case 'panright': if (Date.now() - swipeTime > 250) { swipeTime = Date.now(); goBack(); } break;
+      }
+    });
+  }
 
   //show
   this.classList.remove('hidden');
