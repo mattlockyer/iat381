@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>IAT 381 - Mobile Application Design and Development</title>
+
+  <!-- Scripts -->
+  <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+  <!-- Custom Components -->
+  <link rel="import" href="components/main-screen/main-screen.html">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="main.css">
+
+</head>
+
+<body>
+
+  <main-screen menuTitle="Lecture 1" class="hidden">
+
+    <section name="Intro" icon="star">
+      <h3>Lab 2</h3>
+      <p>In this lab, you will see</p>
+      <ul>
+        <li>More on Git</li>
+        <li>React</li>
+        <li>And another React Generator</li>
+      </ul>
+    </section>
+
+    <section name='Git' icon='star'>
+      <h3>Version Control System and Git</h3>
+      <ul>
+        <li>Git is especially useful for historical backups of versions of your code</li>
+        <li>But, what makes Git especially popular is the fact that it's very easy to check <em>changes</em> out of the history.</li>
+        <li>This is what makes Git perfect for team code-related projects</li>
+      </ul>
+    </section>
+
+    <section name='How Git Works' icon='star'>
+      <h3>How Git Works</h3>
+      <ul>
+        <li>Git works from inside a directory that has the files that you want to manage versions of</li>
+        <li>It works with the help of a <code>.git</code> folder where you can back up your code</li>
+        <li>The <code>.git</code> folder can be moved around. If you do move that folder around, Git clients will most likely think that files have changed, relative to where the folder is located in the directory tree</li>
+      </ul>
+    </section>
+
+    <section name='More on how Git works' icon='star'>
+      <h3>More on Git</h3>
+      <ul>
+        <li>If it's your first time working on a project, then you may initialize a new Git repo in your project, by running <code>git init</code>, while <code>cd</code>'d into the folder in the terminal</li>
+        <li>To commit your first changes, you first stage the changes</li>
+        <li>You do so by running <code>git add -A</code></li>
+        <li>Next, you commit your changes, by running <code>git commit -am "your message goes here"</code></li>
+        <li>And congratulations! Your code history is now backed up!</li>
+      </ul>
+    </section>
+
+    <section name="Sharing with Git" icon="star">
+      <h3>Sharing your projects with Git</h3>
+      <ul>
+        <li>One way to share your Git project is by actually sharing just the <code>.git</code> folder</li>
+        <li>The person interested in your project will simply create a new folder, and put the <code>.git</code> folder there</li>
+        <li>Once done so, they can simply type run <code>git checkout some-branch-name</code></li>
+        <li>But that's overkill</li>
+        <li>Use a tool like GitHub</li>
+        <li>Assuming that you <em>just</em> created a new GitHub repo called <code>someproject</code>, then, you can simply add the remote GitHub repo as a "remote" by running <code>git remote add origin https://github.com/someusername/someproject.git</code>, and then pushing it by running <code>git push origin master</code></li>
+        <li>Now, the person interested in your project can simply "clone" your repo by running <code>git clone https://github.com/someusername/someproject.git</code>, while <code>cd</code>'ed into a folder of their choosing.</li>
+        <li>Once the command has finished, the person who "cloned" your repo can just <code>cd</code> into <code>someproject</code></li>
+        <li>Assuming that you added that person as a collaborator to your project, they should then be able to make changes locally, commit them locally, then push them out onto GitHub. Now we're <em>really</em> doing some team work!</li>
+      </ul>
+    </section>
+
+    <section name='Collaborating using Git and GitHub' icon='star'>
+      <h3>Collaborating with Git and GitHub</h3>
+      <ul>
+        <li>In the last section, I mentioned how you can push to master. Here's an alternative</li>
+        <li>Locally, you create a new branch by running <code>git checkout -b my-feature-branch</code></li>
+        <li>You work directly on that branch</li>
+        <li>Once you're done with your work, push that branch out to the remote repo, by running <code>git push origin my-feature-branch</code> (N.B. <code>my-feature-branch</code> is entirely a fictitious branch and you are free to call it anything)</li>
+        <li>Then, you issue a pull request. Your collaborator will check out the changes locally, by running <code>git checkout origin/my-feature-branch</code></li>
+        <li>They will then run it and see if there's any issues. If there aren't, they give a thumbs up to the pull request, and the code can be successfully merged</li>
+      </ul>
+    </section>
+
+    <section name="Publishing to GitHub pagse" icon='star'>
+      <h3>Publishing your work to GitHub Pages</h3>
+      <ul>
+        <li>Once your ready, be sure to compile your project</li>
+        <li>Now, copy the compiled code to somewhere else, and possibly give it a new name</li>
+        <li>Assuming that you are about to publish for the first time for your project, <code>cd</code> into the build files and run <code>git init</code> to initialize a new Git repo</li>
+        <li>Copy the contents of your build into that folder</li>
+        <li>Finally commit your changes</li>
+        <li>Be sure that you are on the <code>gh-pages</code> branch, by running <code>git checkout --orphan gh-pages</code></li>
+        <li>Commit your changes into the local repo by running <code>git add -A</code> and <code>git commit -am</code></li>
+        <li>Add your remote repo that will serve the build files as a "remote" by running <code>git remote add origin path-to-your-remote-repo</code></li>
+        <li>Then push to your remote repo by running <code>git push origin gh-pages</code>, and you should be ready to go</li>
+      </ul>
+    </section>
+
+    <section name="Publishing Further Changes" icon='star'>
+      <h3>Publishing newer changes to your site</h3>
+      <ul>
+        <li>Go to your dist folder, and move the <code>.git</code> folder somewhere else</li>
+        <li>delete the dist folder</li>
+        <li>Go back to your project folder and build the project again</li>
+        <li>Move the new dist folder where your old dist folder was</li>
+        <li>Move the <code>.git</code> folder into the new dist folder</li>
+        <li>Now, Git clients should be able to pick up the fact that there have been some changes made</li>
+        <li>Commit those changes and push them out to the repo</li>
+      </ul>
+    </section>
+
+    <section name='React' icon='star'>
+      <h3>React: A Front-End JavaScript Framework</h3>
+      <ul>
+        <li>React is a new JavaScript front-end framework from Facebook</li>
+        <li>Its only purpose is to manage the DOM, and provide a very rudementary data binding</li>
+        <li>How data is managed is entirely up to you.</li>
+        <li>Here's an example React application: <a href='https://gist.github.com/shovon/a7861f52d6367785d940'>https://gist.github.com/shovon/a7861f52d6367785d940</a></li>
+        <li>Very easy to learn, compared to AngularJS</li>
+      </ul>
+    </section>
+
+    <section name='JSX' icon='star'>
+      <h3>React's in-script DSL: JSX</h3>
+      <ul>
+        <li>React's flag-ship language is JSX.</li>
+        <li>React's JSX is regular JavaScript, but with an XML-like syntax added to it</li>
+        <li>It's not exclusive to React, but so far, there seems to only be a handful of libraries and frameworks that JSX targets</li>
+        <li>JSX <em>may</em> look like HTML. But don't be fooled! A lot of the HTML standard aren't implemented in JSX</li>
+      </ul>
+    </section>
+
+    <section name='For this Lab' icon='star'>
+      <h3>Download one of two generators (or both)</h3>
+      <li><code>npm install -g https://github.com/shovon/generator-simple-react.git</code></li>
+      <li><code>npm install -g generator-material-ui</code></li>
+      <li>Create at least one other view (React component), and display it</li>
+    </section>
+
+  </main-screen>
+
+</body>
+</html>
