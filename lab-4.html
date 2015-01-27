@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>IAT 381 - Mobile Application Design and Development</title>
+
+  <!-- Scripts -->
+  <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+  <!-- Custom Components -->
+  <link rel="import" href="components/main-screen/main-screen.html">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="main.css">
+
+</head>
+
+<body>
+
+  <main-screen menuTitle="Lab 3" class="hidden">
+
+    <section name="Intro" icon="star">
+      <h3>Lab 3</h3>
+      <p>We're going to talk more about AngluarJS and a little bit into Hammer.js and touch</p>
+    </section>
+
+    <section name='AngluarjS' icon='star'>
+      <h3>AngularJS</h3>
+      <p>We are simply going to refactor this project.</p>
+      <p>Clone the example repo by running <code>git clone https://github.com/shovon/iat381-lab4-app.git</code>.</p>
+      <p><code>cd</code> into the folder and let's get cracking.</p>
+    </section>
+
+    <section name='Hammer.js' icon='star'>
+      <h3>Hammer.js</h3>
+      <p>Working with Hammer.js is insanely easy.</p>
+      <code><pre>
+var mc = new Hammer(myElement, myOptions);
+mc.on('pan', function(ev) {
+    console.log(ev);
+});
+      </pre></code>
+      <p>Read the docs at <a href="http://hammerjs.github.io/getting-started/">hammerjs.github.io/getting-started</a></p>
+    </section>
+
+  </main-screen>
+
+</body>
+</html>
