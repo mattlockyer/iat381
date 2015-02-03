@@ -19,31 +19,44 @@
 
 <body>
 
-	<main-screen menuTitle="Assignment 1" class="hidden">
+	<main-screen menuTitle="Assignment 2" class="hidden">
 
 	<section name="Overview" icon="list">
 
 		<h3>
-			Building a Mobile Application using a Web Framework
+			Redesigning a UX
 		</h3>
 		<p>
-			In this assignment you are going to use a web framework to build a single page application (SPA).
+			In this assignment you are going to use SVG, CSS transforms, Canvas or WebGL to redesign a simple classic app with a COMPLETELY, RADICALLY NEW AND ORIGINAL User Experience.
 		</p>
 		<p>
-			All of your applications resources will be included the first time a user visits your website and navigation will be handled by JavaScript though your frameworks routing module.
+			Just like assignment 1, this should be a single page application. If you need multiple views or routing, use a web framework like angular, react, vue, mithril, etc...
 		</p>
 		<p>
 			Your application should be responsive and smooth with a modern look and feel.
 		</p>
 		
 		<h3>
-			Design for a Phone First!
+		    Good or Bad
+		</h3>
+		<p>
+		    For this assignment you can come up with any new UX you like, it may work, it may not.
+		</p>
+		<p>
+		    Personally I would try to do something radical and MAKE IT WORK WELL, but in the end, not all wild new ideas end up working well in production.
+		</p>
+		<p>
+		    Try your best to produce something awesome that you're proud of, but be prepared to present equally about what worked and WHAT DID NOT WORK!
+		</p>
+		
+		<h3>
+			Design for the Phone!
 		</h3>
 		<p>
 			Since we are working with web technologies you will hear the term responsive a lot.
-		</p>
+		</p>e
 		<p>
-			Responsive means that your website will adapt whether it is run on a phone, tablet, or desktop.
+			Responsive means that your webapp will adapt whether it is run on a phone, tablet, or desktop.
 		</p>
 		<p>
 			DO NOT focus on this when building your assignments, design for a phone, that is what Salehen and I will be using to mark your assignments.
@@ -55,21 +68,36 @@
 		<p>
 			Make sure your app works on a iPhone 5 / Nexus 5 "ish" device. i.e. buttons are clickable and the viewport is sized so that when you look at it on a phone you can read the text etc...
 		</p>
+		<p>
+			Use the meta viewport tag (see FAQ).
+		</p>
+		<p>
+			*** Test with Chrome Dev Tools Device Emulation for things like multitouch (pinch, rotate, etc... ***
+		</p>
 		
 	</section>
 	
 	<section name="Ideas" icon="star">
 
 		<h3>
-			Application Domains and Ideas
+			Application Choices
 		</h3>
 		<ul>
-			<li>Quiz / Survey App</li>
-			<li>Interactive Lesson (code, design, etc...)</li>
-			<li>Data Viz App (selectable data sets / views / filters)</li>
-			<li>Modelling Application (character builder, wizard, etc)</li>
-			<li>??? (please ask Salehen or myself)</li>
+			<li>Calculator</li>
+			<li>Clock</li>
+			<li>To Do List</li>
+			<li>Calendar</li>
+			<li>Camera</li>
 		</ul>
+		
+		<h3>Scope It!</h3>
+		
+		<p>
+		    The point of this assignment is not to make an amazing application, as you can tell by the choices, they are standard apps that already have several good implementations.
+		</p>
+		<p>
+		    Focus your time and energy instead, on completely redesigning the user experience, however radical your ideas may be, keep it scoped and have fun!
+		</p>
 		
 	</section>
 
@@ -79,25 +107,20 @@
 			Design
 		</h3>
 		<ul>
-			<li>Modern look and feel</li>
-			<li>Modern UX afforances</li>
-			<li>Proper navigation flow</li>
-			<li>Proper feedback</li>
-			<li>Correct use of icons and typography</li>
-			<li>Correct use of animations</li>
-			<li>Performs well (smooth transitions, scrolling, animations etc...)</li>
-			<li>The user should not get stuck, or be unaware of what's happening at any point in your application!</li>
+			<li>Original UX</li>
+			<li>Feedback</li>
+			<li>Motion (yes you must, it's cool)</li>
+			<li>Where appropriate: icons, color, typography, navigation</li>
+			<li>Performance (smooth animations if you use them, smooth scrolling, no junky / janky code)</li>
 		</ul>
 
 		<h3>
 			Technical
 		</h3>
 		<ul>
-			<li>Use a web framework (Angular, React, Ember, Backbone, etc...)</li>
-			<li>Use a routing module provided by or added to your framework</li>
+			<li>USE SHAPES: SVG, CSS, Canvas or WebGL (USE A LIBRARY)</li>
+			<li>If you need routes and views USE A FRAMEWORK</li>
 			<li>Single Page App (all resources delivered in one request)</li>
-			<li>Multiple views + navigation (i.e. home, view1, view2, settings, ...)</li>
-			<li>Navbar / toolbar / menu</li>
 			<li>User input + feedback</li>
 			<li>Animations (button feedback or transitions)</li>
 			<li>Some logic algorithm (i.e. parsing / calculating results, filtering data)</li>
@@ -107,14 +130,6 @@
 	
 	<section name="FAQ" icon="face-unlock">
 
-        <h3>
-            Where are those cool examples you emailed us?
-        </h3>
-        <p>
-            <a href="http://plnkr.co/edit/6mLkgQbbvgcl4Ze67wDU?p=preview">Directives and Animations</a>
-            <a href="http://plnkr.co/edit/uXmzU3FlRiQe5cLNipsL?p=preview">Routes and Params</a>
-            <a href="http://plnkr.co/edit/WCNTtbmsTbaTYPl4IGFK?p=preview">Data Sharing and HammerTime</a>
-        </p>
 		<h3>
 			What does my app have to be able to run on?
 		</h3>
@@ -140,14 +155,7 @@
 			Do I have to support touch gestures?
 		</h3>
 		<p>
-		    That's up to you and your app design.
-		</p>
-		
-		<h3>
-			How much content should I have?
-		</h3>
-		<p>
-		    Keep it fairly small and focus on showing off some clean application logic (i.e. handling user input and displaying results through a controller and view template) and ABSOLUTELY FOCUS on design and ux. Your app should look and run REALLY WELL.
+		    Yes, use a library like Hammer.js
 		</p>
 		
 		<h3>
@@ -161,7 +169,7 @@
 			What do you mean single page app?
 		</h3>
 		<p>
-		    Using a web framework and a routing module your app should never leave the original index.html. Read up on this.
+		    Your app should never leave the original index.html. Read up on this.
 		</p>
 		
 		<h3>
@@ -171,26 +179,6 @@
 		    Only if you are running a pre-processor on less, sass, jsx, etc... You app should run live on gh-pages, i.e. only js, css, html are supported.
 		</p>
 		
-		<h3>
-			How should I keep everything organized?
-		</h3>
-		<p>
-		    Follow the file structure your framework prescribes, or use the following basic structure:
-		</p>
-		<pre>
-   app/
-     index.html
-     js/
-       controller1.js
-       ...
-     css/
-       main.css
-       ...
-     img/
-       ...
-     bower_components (or libs) /
-       ...
-		</pre>
 		
 	</section>
 
@@ -245,9 +233,9 @@
 		</h3>
 		<ul>
 			<li>Week 1: Find a partner(s) and idea for app</li>
-			<li>Week 2: Setup framework, models and views</li>
-			<li>Week 3: Add application logic</li>
-			<li>Week 4: Finalize application</li>
+			<li>Week 2: Choose your library, sketch out how it will work, divide the work</li>
+			<li>Week 3: Get the basic functionality working, present</li>
+			<li>Week 4: Finalize the application, create a README</li>
 		</ul>
 		
 	</section>
