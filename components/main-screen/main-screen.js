@@ -139,12 +139,16 @@ attached:function() {
     var self = this;
     setTimeout(function() {
       //majorly hacky but works...
-      var ph = page.children[0].getBoundingClientRect().height;
+      var ph = page.children[0].getBoundingClientRect().height + 32;
       var h = self.scaffold.scroller.getBoundingClientRect().height;
       page.style.height = h + 'px';
       page.style.overflow = ph > h ? 'scroll' : 'hidden';
       page.style.overflowX = 'hidden';
-    }, 1);
+      console.log(h);
+      console.log(ph);
+      console.log(self.scaffold.scroller);
+      console.log(page.children[0]);
+    }, 10);
   },
 
   changePage:function(name, back, replace) {
