@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>IAT 381 - Mobile Application Design and Development</title>
+
+  <!-- Scripts -->
+  <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+  <!-- Custom Components -->
+  <link rel="import" href="components/main-screen/main-screen.html">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="main.css">
+
+</head>
+
+<body>
+
+  <main-screen menuTitle="Lab 5" class="hidden">
+
+    <section name="Intro" icon="star">
+      <h3>Lab 5</h3>
+      <p>Today, we are going to look into rendering libraries such as Velocity.js, pixi.js, and three.js</p>
+      <ul>
+        <p><a href="http://codepen.io/rachsmith/pen/Fxuia">Velocity.js</a></p>
+        <p><a href="http://codepen.io/jascha/pen/hLrBI">pixi.js</a></p>
+        <p><a href="http://codepen.io/thomasmurphymusic/pen/DbjHJ">three.js</a></p>
+      </ul>
+    </section>
+
+    <section name="Velocity.js" icon="star">
+      <h3>Velocity.js</h3>
+      <p>Useful for smoothly animating DOM elements</p>
+      <code><pre>
+        $('element').velocity({translateX: 100}, 300, function () {
+          // Maybe do some more animation here.
+        })
+      </pre></code>
+    </section>
+
+    <section name="pixi.js" icon="star">
+      <h3>pixi.js</h3>
+      <p>A helper library for drawing 2D content on a WebGL context (with an HTML5 canvas fallback, just in case)</p>
+      <code><pre>
+        var renderer = new PIXI.WebGLRenderer(800, 600);
+
+        document.body.appendChild(renderer.view);
+
+        var stage = new PIXI.Stage();
+
+        var someTexture = PIXI.Texture.fromImage('image.png');
+        var sprite = new PIXI.Sprite(someTexture);
+
+        stage.addChild(sprite);
+
+        requestAnimationFrame(function animate() {
+          renderer.render();
+          requestAnimationFrame(animate);
+        });
+      </pre></code>
+    </section>
+
+    <section name="three.js" icon="star">
+      <h3>three.js</h3>
+      <p>A helper library to draw 3D content on a variety of rendering platform on the web (including--or rather especially--WebGL)</p>
+      <code><pre>
+        // Will hold our list of abstract 3D objects.
+        var scene = new THREE.Scene();
+
+        // An absract helper object to generate the matrix to help position
+        // vertices in such a way that we get the illusion of a 3D object given
+        // some perspective.
+        var camera = new THREE.PerspectiveCamera(
+          75, window.innerWidth / window.innerHeight, 0.1, 1000
+        );
+
+        // This is where the David Blaine will happen.
+        var renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        var geometry = new THREE.BoxGeometry(1, 1, 1);
+        var material = new THREE.MesBasicMaterial({color: 0xFFFFFF});
+        var cube = new THREE.Mesh(geometry, material);
+        scene.add(cube);
+
+        camera.position.z = 5;
+
+        requestAnimationFrame(function animate() {
+          cube.rotation.x = Math.sin(Date.now());
+          cube.rotation.y = Math.sin(Date.now());
+
+          renderer.render(scene, camera);
+          requestAnimationFrame(animate);
+        });
+      </pre></code>
+    </section>
+
+  </main-screen>
+
+</body>
+</html>
