@@ -82,8 +82,13 @@
         renderer.setSize(window.innerWidth, window.innerHeight);
         document.body.appendChild(renderer.domElement);
 
+        // Represents the vertices that will comprise a cube.
         var geometry = new THREE.BoxGeometry(1, 1, 1);
+
+        // Tells WebGL on how we are going to draw the "fragments" of our cube.
         var material = new THREE.MesBasicMaterial({color: 0xFFFFFF});
+
+        // Just an abstract 3D object.
         var cube = new THREE.Mesh(geometry, material);
         scene.add(cube);
 
