@@ -29,6 +29,7 @@
         <p><a href="http://codepen.io/jascha/pen/hLrBI">pixi.js</a></p>
         <p><a href="http://codepen.io/thomasmurphymusic/pen/DbjHJ">three.js</a></p>
       </ul>
+      <p>Also, clone this repo: git@github.com:shovon/iat381-lab5.git</p>
     </section>
 
     <section name="Velocity.js" icon="star">
@@ -57,7 +58,7 @@
         stage.addChild(sprite);
 
         requestAnimationFrame(function animate() {
-          renderer.render();
+          renderer.render(stage);
           requestAnimationFrame(animate);
         });
       </pre></code>
@@ -82,16 +83,21 @@
         renderer.setSize(window.innerWidth, window.innerHeight);
         document.body.appendChild(renderer.domElement);
 
+        // Represents the vertices that will comprise a cube.
         var geometry = new THREE.BoxGeometry(1, 1, 1);
-        var material = new THREE.MesBasicMaterial({color: 0xFFFFFF});
+
+        // Tells WebGL on how we are going to draw the "fragments" of our cube.
+        var material = new THREE.MeshBasicMaterial({color: 0xFFFFFF, wireframe: true});
+
+        // Just an abstract 3D object.
         var cube = new THREE.Mesh(geometry, material);
         scene.add(cube);
 
         camera.position.z = 5;
 
         requestAnimationFrame(function animate() {
-          cube.rotation.x = Math.sin(Date.now());
-          cube.rotation.y = Math.sin(Date.now());
+          cube.rotation.x = Date.now()*0.001;
+          cube.rotation.y = Date.now()*0.001;
 
           renderer.render(scene, camera);
           requestAnimationFrame(animate);
