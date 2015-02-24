@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>IAT 381 - Mobile Application Design and Development</title>
+
+  <!-- Scripts -->
+  <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+  <!-- Custom Components -->
+  <link rel="import" href="components/main-screen/main-screen.html">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="main.css">
+
+</head>
+
+<body>
+
+  <main-screen menuTitle="Lab 5" class="hidden">
+
+    <section name="Intro" icon="star">
+      <h3>Lab 5</h3>
+      <p>Today we are actually going to apply some of Web API</p>
+      <p>We're going to look at some of these APIs, mostly</p>
+      <ul>
+        <li>Camera (no actual API available, but WebRTC just gives us access camera, so...)</li>
+        <li>Web Audio (if you've heard of the &lt;audio&gt; element, we're going to use something even better</li>
+      </ul>
+      <p>If we have the time, we're going to look at some more stuff</p>
+      <p>And also, clone this repo: https://github.com/shovon/iat381-lab6.git</p>
+    </section>
+
+    <section name="Camera" icon="star">
+      <h3>Camera</h3>
+      <p>Browsers don't provide a camera API, but WebRTC provides access to a camera, as well as the video stream that comes straight out of the camera</p>
+      <code><pre>
+        var video = document.getElementsByTagName('video')[0];
+
+        navigator.getMedia = (
+          navigator.getUserMedia ||
+          navigator.webkitGetUserMedia ||
+          navigator.mozGetUserMedia ||
+          navigator.msGetUserMedia
+        );
+
+        navigator.getMedia(
+          {
+            video: true,
+            audio: false
+          },
+          function(stream) {
+            if (navigator.mozGetUserMedia) {
+              // Wohoo, Firefox is awesome! No need of asking the browser to
+              // create a video stream server. Just grab the stream directly!
+              video.mozSrcObject = stream;
+            } else {
+              var vendorURL = window.URL || window.webkitURL;
+
+              // Ask the browser to create a video stream server, generate a URL
+              // and use that URL to grab the video stream.
+              video.src = vendorURL.createObjectURL(stream);
+            }
+            video.play();
+          },
+          function(err) {
+            console.log("An error occured! " + err);
+          }
+        );
+      </pre></code>
+
+      <code><pre>
+        var canvas = document.createElement("canvas");
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+
+        canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+
+        var img = document.createElement();
+        img.src = canvas.toDataURL();
+      </pre></code>
+    </section>
+
+    <section name="Web Audio" icon="star">
+      <h3>Web Audio</h3>
+      <p>Play and record audio</p>
+      <p>on a lot of browsers (especially mobile browsers) &lt;audio&gt; tags don't autoplay. The Web Audio API is here to save the day</p>
+      <code><pre>
+        var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'audio.wav', true);
+        xhr.responseType = 'arraybuffer';
+        xhr.onload = function () {
+          var source = audioCtx.createBufferSource();
+          source.buffer = audioCtx.decodeAudioData(xhr.response);
+          source.loop = true;
+          source.connect(audioCtx.destination);
+          source.start();
+        }
+      </pre></code>
+      <code><pre>
+        navigator.getMedia(
+          {
+            video: false,
+            audio: true
+          },
+          function(stream) {
+            var microphone = audioCtx.createMediaStreamSource(stream);
+            microphone.connect(audioCtx.destination);
+          },
+          function(err) {
+            console.log("An error occured! " + err);
+          }
+        );
+      </pre></code>
+    </section>
+
+    <section name="Others" icon="star">
+      <h3>Other examples</h3>
+      
+      <h4>Device motion</h4>
+      <code><pre>
+        window.ondevicemotion = function(event) {
+          var rotationX = event.rotationRate.alpha;
+          var rotationY = event.rotationRate.beta;
+          var rotationZ = event.rotationRate.gamma;
+        };
+      </pre></code>
+
+      <h4>Geolocation</h4>
+      <code><pre>
+        navigator.geolocation.getCurrentPosition(function(position) {
+          // position.coords.latitude
+          // position.coords.longitude
+        });
+      </pre></code>
+
+      <p>More at https://developer.mozilla.org/en-US/docs/WebAPI</p>
+    </section>
+
+  </main-screen>
+
+</body>
+</html>
