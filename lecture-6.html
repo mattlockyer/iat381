@@ -27,120 +27,93 @@
 		</h3>
 		<ul>
 			<li>
-				Talk: Google's HIG
+				Talk: Web APIs
 			</li>
 			<li>
-				Assignment 2
-			</li>
-			<li>
-				Canvas and WebGL
+				Final Project
 			</li>
 		</ul>
 	</section>
 
-	<section name="Google HIG" icon="speaker-notes">
+	<section name="Web APIs" icon="speaker-notes">
 		
-		<h1>
-		    <a href="http://www.google.com/design/spec/material-design/introduction.html">
-				Material Design
-			</a>
-		</h1>
+		<h3>Application Programming Interface</h3>
 		
-		<h3>Required Readings</h3>
+		<p>There are 2 main types of Web APIs we will discuss in this course. The first has to do with device capabilities.</p>
+		<p>We call these device APIs because they define a safe way for a programmer to access device hardware through the browser.</p>
 		
-		<ul>
-			<li>
-				What is Material
-			</li>
-			<li>
-				Animation
-			</li>
-			<li>
-				Style
-			</li>
-			<li>
-				Layout
-			</li>
-			<li>
-				Patterns - Errors, Gestures, Loading Images, Navigation Drawer, Scrolling Techniques
-			</li>
-			<li>
-				Components (optional)
-			</li>
-		</ul>
+		<p>This is analogous to the way an operating system will abstract the hardware of a computer so a programmer does not need to know the underlying details of how the hardware works.</p>
 		
-	</section>
-
-	<section name="Assignment 2" icon="assignment">
-
-		<h3>Out now</h3>
-		
-		
-
 	</section>
 	
-	<section name="Canvas+WebGL" icon="face-unlock">
+	<section name="Resources" icon="face-unlock">
 
-		<h3>SVG</h3>
+		<h3>MDN</h3>
 		
-		<p>DISCLAMER: SVG is slow on mobile when you have to animate many objects</p>
-	    <p>I also don't know many libraries that make working with SVG easy, but this doesn't mean you can't use SVG in your projects. Make an educated choice.</p>
+		<p>Probably the most comprehensive up to date documentation.</p>
 		
-	    <a href="https://developer.mozilla.org/en/docs/Web/SVG">About</a>
-	    <p>Libraries</p>
-	    <ul>
+		<p>Not all of these are available so be sure to check compatibility with Chrome!</p>
+		
+		<ul>
 	        <li>
-	            <a href="https://developer.mozilla.org/en/docs/Web/SVG">D3.js</a>
+		        <a href="https://developer.mozilla.org/en-US/docs/WebAPI">Reference</a>
+	        </li>
+	         <li>
+		        <a href="https://developer.mozilla.org/en-US/docs/Web/Reference/API">Reference</a>
+	        </li>
+	         <li>
+		        <a href="https://developer.mozilla.org/en/docs/Web/API">List of Interfaces</a>
 	        </li>
 	    </ul>
 	    
-		<h3>CSS Transforms</h3>
+	    <h3>
+	        HTML5 Rocks
+	    </h3>
 		
-	    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform">About</a>
-	    <p>Libraries</p>
-	    <p>Note these libraries are about animating HTML elements using CSS or JS animations that take advantage of CSS transforms. You can style your elements with plain CSS.</p>
+		<p>Useful tutorials that mostly cover new and emerging web technologies.</p>
+		
 	    <ul>
 	        <li>
-	            <a href="http://codegeekz.com/css-effect-libraries-creating-beautiful-animations/">List</a>,
-	            <a href="http://www.justinaguilar.com/animations/">Cheat Sheet</a>,
-	            <a href="http://daneden.github.io/animate.css/">Animate.css</a>,
-	            <a href="http://greensock.com/gsap">Greensock GSAP</a>,
-	            <a href="http://julian.com/research/velocity/">Velocity.js (jquery anim. replacement)</a>
+	            <a href="http://www.html5rocks.com/en/">Tutorials</a>
 	        </li>
 	    </ul>
 		
-		<h3>Canvas</h3>
-	    <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API">About</a>
-	    <p>Libraries</p>
+	    <h3>
+	        Can I Use
+	    </h3>
+		
+		<p>A great resource for checking which browser supports what.</p>
+		
 	    <ul>
 	        <li>
-	            <a href="https://github.com/ericdrowell/KineticJS/">Kinetic.js</a>,
-	            <a href="https://github.com/createjs/easeljs/">Easel.js</a>,
-	            <a href="http://fabricjs.com/">Fabric.js</a>,
-	            <a href="http://paperjs.org/">Paper.js</a>
+	            <a href="http://caniuse.com/">Site</a>
+	        </li>
+	    </ul>
+		
+	    <h3>
+	        Libraries
+	    </h3>
+		
+		<p>Wherever possible, try to find libraries or snippets of code that will abstract the API and make it easier for you to create.</p>
+		
+		<p>A perfect example of this is Three.js or Pixi.js for WebGL.</p>
+		
+		<p>Compare writing WebGL to Three.js code:</p>
+		
+	    <ul>
+	        <li>
+	            <a href="https://developer.mozilla.org/en-US/docs/Web/WebGL/Creating_3D_objects_using_WebGL">Barf</a>
+	        </li>
+	        <li>
+	            <a href="http://threejs.org/examples/#webgl_geometry_cube">Yaaa!</a>
 	        </li>
 	    </ul>
 	    
-		<h3>WebGL</h3>
-	    <a href="https://developer.mozilla.org/en-US/docs/Web/WebGL">About</a>
-	    <p>Libraries</p>
-	    <ul>
-	        <li>
-	            <a href="http://www.pixijs.com/">Pixi.js (2d)</a>,
-	            <a href="http://threejs.org/">Three.js (3d)</a>
-	        </li>
-	    </ul>
+	    <p>Here's a great library that wraps up the Indexed DB API</p>
 	    
-		<h3>Extra Animation Libraries</h3>
-	    <ul>
-	        <li>
-	            <a href="https://github.com/sole/tween.js/">(SOLE) Tween.js (good paired with pixi/three)</a>,
-	            <a href="https://github.com/CreateJS/TweenJS">Tween.js Part of Easel / Create JS</a>,
-	            <a href="http://greensock.com/gsap">Greensock GSAP (can use with pixi/three)</a>
-	        </li>
-	    </ul>
+	    <a href="http://staypositive.ru/sklad/">Sklad</a>
 		
-		<h3>USE LIBRARIES</h3>
+		<h3>USE LIBRARIES WHEREVER POSSIBLE</h3>
 
 	</section>
 
