@@ -89,16 +89,21 @@
       <p>on a lot of browsers (especially mobile browsers) &lt;audio&gt; tags don't autoplay. The Web Audio API is here to save the day</p>
       <code><pre>
         var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
         var xhr = new XMLHttpRequest();
+
         xhr.open('GET', 'audio.wav', true);
         xhr.responseType = 'arraybuffer';
         xhr.onload = function () {
           var source = audioCtx.createBufferSource();
-          source.buffer = audioCtx.decodeAudioData(xhr.response);
-          source.loop = true;
-          source.connect(audioCtx.destination);
-          source.start();
+          audioCtx.decodeAudioData(xhr.response, function (buffer) {
+            source.buffer = buffer;
+            source.loop = true;
+            source.connect(audioCtx.destination);
+            source.start();
+          });
         }
+        xhr.send();
       </pre></code>
       <code><pre>
         navigator.getMedia(
