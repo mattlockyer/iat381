@@ -41,6 +41,62 @@
 		
 	</section>
 	
+	<section name="FAQ" icon="face-unlock">
+	    
+	    <h1>INCOMPLETE (MORE ANSWERS WHEN QUESTIONS COME IN)</h1>
+
+		<h3>
+			What does my app have to be able to run on?
+		</h3>
+		<p>
+		    Your app should be live on a gh-pages branch of a github repo. Salehen and myself will be using Google Chrome for Android (same as iOS) on a Nexus 5 and One Plus One.
+		</p>
+		
+		<h3>
+			How do I support a mobile layout and properly size my CSS pixels?
+		</h3>
+		<p>
+		    <a href="https://developer.mozilla.org/en/docs/Mozilla/Mobile/Viewport_meta_tag">Read This</a> and then test on a phone or use Chrome developer tools (see below).
+		</p>
+		
+		<h3>
+			How can I test my app?
+		</h3>
+		<p>
+		    You can use Google Chrome's developer tools to emulate mobile devices and even network speeds. Click the little phone icon in the top left to start emulation.
+		</p>
+		
+				<h3>
+			Do I have to support touch gestures?
+		</h3>
+		<p>
+		    Yes, use a library like Hammer.js
+		</p>
+		
+		<h3>
+			Do I have to worry about my app running on other browsers? Tablets? Desktop?
+		</h3>
+		<p>
+		    No.
+		</p>
+		
+		<h3>
+			What do you mean single page app?
+		</h3>
+		<p>
+		    Your app should never leave the original index.html. Read up on this.
+		</p>
+		
+		<h3>
+			Do I have to compress, gzip, uglify etc...
+		</h3>
+		<p>
+		    Only if you are running a pre-processor on less, sass, jsx, etc... You app should run live on gh-pages, i.e. only js, css, html are supported.
+		</p>
+		
+		
+	</section>
+	
 	<section name="Ideas" icon="star">
 
 		<h3>
@@ -54,54 +110,61 @@
 		    <li>...</li>
 		</ul>
 		
-		<p>Basically you can build any application you like as long as you can meet the requirements</p>
+		<p>
+		    Basically you can build any application you like but you must meet the requirements
+	    </p>
 		
 	</section>
 	
 
 	<section name="Requirements" icon="check">
-
-        <h1>INCOMPLETE SUBJECT TO CHANGE</h1>
-
-		<h3>
-			Design
+	    
+    	<h3>
+		    Design (NON NEGOTIABLE)
 		</h3>
+		<p>
+		    The following must be included in your application.
+		</p>
+		<ul>
+			<li>The user should not get stuck (games: within reason)</li>
+			<li>Feedback (not just errors: buttons, etc...)</li>
+			<li>Motion / Animations / Transitions</li>
+			<li>PERFORMANCE (smooth animations if you use them, smooth scrolling, no junky / janky code)</li>
+		</ul>
+		
+		<h3>
+			Design (FLEXIBLE)
+		</h3>
+		<p>
+		    Example: a game does not need to stress a "modern look and feel" or "proper navigation flow" if it has developed an orginial UX and navigation experience.
+		</p>
+		<p>
+		    <strong>Be Careful:</strong> you app's implementation must still demonstrate proper UX and design thinking.
+		</p>
+		
 		<ul>
 			<li>Modern look and feel</li>
 			<li>Modern UX afforances</li>
+			<li>Modern use of icons and typography</li>
 			<li>Proper navigation flow</li>
-			<li>Proper feedback</li>
-			<li>Correct use of icons and typography</li>
-			<li>Correct use of animations</li>
-			<li>Performs well (smooth transitions, scrolling, animations etc...)</li>
-			<li>The user should not get stuck, or be unaware of what's happening at any point in your application!</li>
-			
 			<li>Original UX</li>
-			<li>Feedback</li>
-			<li>Motion (yes you must, it's cool)</li>
-			<li>Where appropriate: icons, color, typography, navigation</li>
-			<li>Performance (smooth animations if you use them, smooth scrolling, no junky / janky code)</li>
 		</ul>
-
+		
 		<h3>
 			Technical
 		</h3>
+		<p>
+		    You must use a framework to manage your views, even if it is a game and the framework simply handles a splash page, instructions and the main game screen.
+		</p>
 		<ul>
 			<li>Use a web framework (Angular, React, Ember, Backbone, etc...)</li>
 			<li>Use a routing module provided by or added to your framework</li>
 			<li>Single Page App (all resources delivered in one request)</li>
 			<li>Multiple views + navigation (i.e. home, view1, view2, settings, ...)</li>
 			<li>Navbar / toolbar / menu</li>
-			<li>User input + feedback</li>
-			<li>Animations (button feedback or transitions)</li>
-			<li>Some logic algorithm (i.e. parsing / calculating results, filtering data)</li>
-			
-			<li>USE SHAPES: SVG, CSS, Canvas or WebGL (USE A LIBRARY)</li>
-			<li>If you need routes and views USE A FRAMEWORK</li>
-			<li>Single Page App (all resources delivered in one request)</li>
-			<li>User input + feedback</li>
-			<li>Animations (button feedback or transitions)</li>
-			<li>Some logic algorithm (i.e. parsing / calculating results, filtering data)</li>
+			<li>User input</li>
+			<li>SVG, CSS, Canvas or WebGL (USE A LIBRARY)</li>
+			<li>CUSTOM APPLICATION LOGIC (code you wrote)</li>
 		</ul>
 		
 	</section>
@@ -109,11 +172,53 @@
 
 	<section name="Brainstorm" icon="thumb-up">
 		
+		
+		<h3>
+			UX is many things
+		</h3>
+		<ul>
+			<li>User Input</li>
+			<ul>
+        		<li>Gestures</li>
+        		<li>Voice</li>
+        		<li>Device APIs</li>
+        	</ul>
+			<li>Feedback</li>
+			<ul>
+        		<li>Color</li>
+        		<li>Shape</li>
+        		<li>Motion</li>
+        		<li>Sound</li>
+        	</ul>
+			<li>Design of Information</li>
+			<ul>
+        		<li>Color</li>
+        		<li>Type</li>
+        		<li>Structure</li>
+        		<li>Organization</li>
+        	</ul>
+		</ul>
+		
+		<h3>Brainstorm</h3>
+		
+		<p>
+		    How can you make your app unique, fun, playful.
+		</p>
+		<p>
+		    Write down all your ideas! No idea is a bad idea! Get wild! Get crazy!
+		</p>
+		<p>
+		    Shortlist your ideas by discussing them with your partner and come up with 3-4 unique user interactions you can develop and test in your application.
+		</p>
+		<p>
+		    Polish the interactions that work, drop the ones that don't.
+		</p>
+		
+		
 	</section>
 	
 	
-	
-	<section name="Examples" icon="dashboard">
+	<section name="Inspiration" icon="face-unlock">
 
 		<h3>
 			Great sites for inspiration
@@ -141,7 +246,98 @@
 	</section>
 	
 	
-	<section name="Libraries" icon="book">
+	<section name="Frameworks" icon="book">
+	
+	    <h1>Tutorials</h1>
+	    
+	    <p>Reminder: you may want to stay away from W3Schools and instead google with MDN and follow their documentation. It is often more up to date, explained better and accurate.</p>
+	    
+	    <p>Example Search: MDN javascript arrays</p>
+	    
+	    <h1>Frameworks</h1>
+	    
+	    <h3>
+			Angular
+		</h3>
+		<ul>
+    		<li>
+    		<a href="https://scotch.io/tutorials/single-page-apps-with-angularjs-routing-and-templating">Single Page App Tutorial with Routing and Templates (good!)</a>
+    		</li>
+    		<li>
+    		<a href="http://campus.codeschool.com/courses/shaping-up-with-angular-js/intro?utm_source=google&utm_medium=cpc&utm_campaign=course&gclid=Cj0KEQiA6JemBRC5tYLRwYGcwosBEiQANA3IB6t8vrcWGlY1lCUkgLLgz6zK2H4TWXkxUsBivx8POVkaAi2J8P8HAQ">Code School Interactive Course</a>
+    		</li>
+    		<li>
+    		<a href="https://docs.angularjs.org/tutorial/step_00">Angular JS Tutorial</a>
+    		</li>
+		</ul>
+		
+		<h3>
+			React
+		</h3>
+		<p>
+		    CAREFUL: you're not building server-side applications with Node.js! Try searching using '-node.js' in google searches.
+		</p>
+		<ul>
+    		<li>
+    		<a href="http://www.funnyant.com/reactjs-what-is-it/">What is React (links and resources)</a>
+    		</li>
+    		<li>
+    		<a href="https://scotch.io/tutorials/learning-react-getting-started-and-concepts">Overview</a>
+    		</li>
+    		<li>
+    		<a href="http://facebook.github.io/react/docs/tutorial.html">React Tutorial</a>
+    		</li>
+		</ul>
+		
+	</section>
+		
+		
+	<section name="Javascript" icon="book">
+		
+		
+		
+		<h1>Recap from Lecture 1: JavaScript</h1>
+		
+		<h3>
+			Beginner and Refresher
+		</h3>
+		<ul>
+    		<li>
+    		<a href="http://www.codecademy.com/en/tracks/javascript">Codecademy Beginner JS</a>
+    		</li>
+    		<li>
+    		<a href="https://developer.mozilla.org/en/learn/javascript">MDN Learn JS Links</a>
+    		</li>
+    		<li>
+    		<a href="http://yuiblog.com/crockford/">Douglas Crockford Videos</a>
+    		</li>
+		</ul>
+		
+		<h3>
+			Intermediate and Books
+		</h3>
+		<ul>
+    		<li>
+    		<a href="http://jstherightway.org/">JS the Right Way (great)</a>
+    		</li>
+    		<li>
+    		<a href="http://eloquentjavascript.net/">Eloquent JS (great)</a>
+    		</li>
+    		<li>
+    		<a href="http://jsbooks.revolunet.com/">JS Books</a>
+    		</li>
+    		<li>
+    		<a href="http://bonsaiden.github.io/JavaScript-Garden/">JS Garden</a>
+    		</li>
+    		<li>
+    		<a href="http://www.2ality.com/2011/11/javascript-classes.html">JS Classes and Inheritence (prototypal)</a>
+    		</li>
+		</ul>
+
+	</section>
+	
+	
+	<section name="Customizing" icon="book">
 
 		<h3>SVG</h3>
 		
@@ -209,64 +405,13 @@
 		<p>That's fine! Make sure you reference what you use and where in your project you use it.</p>
 	</section>
 	
-	<section name="FAQ" icon="face-unlock">
-
-		<h3>
-			What does my app have to be able to run on?
-		</h3>
-		<p>
-		    Your app should be live on a gh-pages branch of a github repo. Salehen and myself will be using Google Chrome for Android (same as iOS) on a Nexus 5 and One Plus One.
-		</p>
-		
-		<h3>
-			How do I support a mobile layout and properly size my CSS pixels?
-		</h3>
-		<p>
-		    <a href="https://developer.mozilla.org/en/docs/Mozilla/Mobile/Viewport_meta_tag">Read This</a> and then test on a phone or use Chrome developer tools (see below).
-		</p>
-		
-		<h3>
-			How can I test my app?
-		</h3>
-		<p>
-		    You can use Google Chrome's developer tools to emulate mobile devices and even network speeds. Click the little phone icon in the top left to start emulation.
-		</p>
-		
-				<h3>
-			Do I have to support touch gestures?
-		</h3>
-		<p>
-		    Yes, use a library like Hammer.js
-		</p>
-		
-		<h3>
-			Do I have to worry about my app running on other browsers? Tablets? Desktop?
-		</h3>
-		<p>
-		    No.
-		</p>
-		
-		<h3>
-			What do you mean single page app?
-		</h3>
-		<p>
-		    Your app should never leave the original index.html. Read up on this.
-		</p>
-		
-		<h3>
-			Do I have to compress, gzip, uglify etc...
-		</h3>
-		<p>
-		    Only if you are running a pre-processor on less, sass, jsx, etc... You app should run live on gh-pages, i.e. only js, css, html are supported.
-		</p>
-		
-		
-	</section>
+	
 
 	<section name="Grades" icon="trending-up">
 	    
-        <h1>INCOMPLETE SUBJECT TO CHANGE</h1>
+        <h1>INCOMPLETE: SUBJECT TO CHANGE</h1>
 
+        <!--
 		<h3>Breakdown</h3>
 		<ul>
 			<li>
@@ -282,7 +427,10 @@
 				Code + Requirements: 3%
 			</li>
 		</ul>
+		-->
+		
 		<h3>General Expectations</h3>
+		
 		<ul>
 			<li>
 				Scoped and focused topic
