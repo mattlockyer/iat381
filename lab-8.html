@@ -39,6 +39,19 @@
       <p>SuperAgent is much more inline how most HTTP libraries are going to use.</p>
     </section>
 
+    <section name="Imgur" icon="star">
+      <pre><code>
+request
+  .get('https://api.imgur.com/3/gallery/hot/viral/0.json')
+  .set('Authorization', 'Client-ID 1de82be6684feb9')
+  .end(function (error, res) {
+    var parsed = JSON.parse(res.text).data.filter(function (image) {
+      return image.type === 'image/jpeg';
+    }).map(createImageObject);
+  }.bind(this));
+      </code></pre>
+    </section>
+
   </main-screen>
 
 </body>
