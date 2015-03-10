@@ -144,10 +144,6 @@ attached:function() {
       page.style.height = h + 'px';
       page.style.overflow = ph > h ? 'scroll' : 'hidden';
       page.style.overflowX = 'hidden';
-      console.log(h);
-      console.log(ph);
-      console.log(self.scaffold.scroller);
-      console.log(page.children[0]);
     }, 10);
   },
 
