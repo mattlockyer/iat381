@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>IAT 381 - Mobile Application Design and Development</title>
+
+  <!-- Scripts -->
+  <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+  <!-- Custom Components -->
+  <link rel="import" href="components/main-screen/main-screen.html">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="main.css">
+
+</head>
+
+<body>
+
+  <main-screen menuTitle="Lab 6" class="hidden">
+
+    <section name="Intro" icon="star">
+      <h3>Lab 5</h3>
+      <p>Today we are going to talk about remote APIs</p>
+
+      <p>But first, download this repo:</p>
+      <p>https://github.com/shovon/iat381-lab8.git</p>
+    </section>
+
+    <section name="SuperAgent" icon="star">
+      <h3>TJ's SuperAgent: "AJAX with Less Suck"</h3>
+      
+      <p>We are going to be using SuperAgent, instead of jQuery AJAX</p>
+
+      <p>The benefit of using SuperAgent is that it sucks a lot less than just XHR, and waaaaay less than jQuery AJAX (who the hell made that stuff?)</p>
+
+      <p>SuperAgent is much more inline how most HTTP libraries are going to use.</p>
+    </section>
+
+    <section name="Imgur" icon="star">
+      <pre><code>
+request
+  .get('https://api.imgur.com/3/gallery/hot/viral/0.json')
+  .set('Authorization', 'Client-ID 1de82be6684feb9')
+  .end(function (error, res) {
+    var parsed = JSON.parse(res.text).data.filter(function (image) {
+      return image.type === 'image/jpeg';
+    }).map(createImageObject);
+  }.bind(this));
+      </code></pre>
+    </section>
+
+  </main-screen>
+
+</body>
+</html>
