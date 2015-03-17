@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>IAT 381 - Mobile Application Design and Development</title>
+
+  <!-- Scripts -->
+  <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+  <!-- Custom Components -->
+  <link rel="import" href="components/main-screen/main-screen.html">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="main.css">
+
+</head>
+
+<body>
+
+  <main-screen menuTitle="Lab 8" class="hidden">
+
+    <section name="Intro" icon="star">
+      <h3>Lab 9</h3>
+      <p>Today we are going to look at IndexedDB and Google Drive API</p>
+
+      <p>But first, download this repo:</p>
+      <p>https://github.com/shovon/iat381-lab9.git</p>
+    </section>
+
+    <section name="Databases Primer" icon="star">
+      <h3>Databases</h3>
+      
+      <uL>
+        <li>IndexedDB is a way to store structured data, in a reliable manner</li>
+        <li>
+          why use IndexedDB?
+          <ul>
+            <li>same reason why iTunes, Web Browsers (for managing browsing history), instant messaging services (for caching chat history)</li>
+            <li>reliability, and a nice API and paradigm to query data</li>
+            <li>
+              ACID
+              <ul>
+                <li>A for Atomicity: have all operations on data happen all at once, or non at all</li>
+                <li>C for Consistency: all operations must ensure that the resulting state is valid, otherwise, do nothing (such as maintain uniqueness)</li>
+                <li>I for Isolation: an incomplete transaction remains intact before any other transaction can occur (with the help of locks, for example)</li>
+                <li>D for Durability: when crap hits the fan with the underlying hardware, things stay intact</li>
+              </ul>
+            </li>
+            <li>
+              they all use SQLite, except Google Chrome, where they use Google's own LevelDB
+              <ul>
+                <li>IndexedDB works on top of the browser's database engine (SQLite on Firefox, LevelDB on Chrome)</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          Although, IndexedDB is the only Database API for the web, let's still ask, why IndexedDB over anything else?
+          <ul>
+            <li>One big advantage: database version management. An event is triggered the moment an application requests that the database's schema has changed, and you can act on that event to update the schema</li>
+          </ul>
+        </li>
+      </uL>
+
+    </section>
+
+    <section name="sklad" icon="star">
+      <h3>sklad</h3>
+
+      <ul>
+        <li>
+          We're going to use sklad. Working directly with IndexedDB is way too much work. sklad's API lays everything out really nicely.
+          <ul>an elegant API for creating/opening a database, managing versions/performing necessary migrations, opening connection to the database, all in one single command</ul>
+        </li>
+        <li>
+          Although, sklad spoon feeds you a lot of stuff, one thing you are responsible for: maintaining the schema, and performing the necessary migrations
+          <ul>
+            <li>but fortunately, with sklad, there's fewer paperwork involved than just raw IndexedDB</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section name="sklad continued" icon="star">
+      <h3>sklad continued</h3>
+
+      <pre><code>
+var dbName = 'todo_list_store';
+ 
+sklad.open(dbName, {
+  version: 1,
+  migration: {
+    '1': function (database) {
+      var objStore = database.createObjectStore('todos', {autoIncrement: true});
+      objStore.createIndex('description_search', 'description', {unique: true});
+    }
+  }
+}, function (err, conn) {
+  if (err) { throw err; }
+  $(function () {
+    var $description = $('#description');
+    var $add         = $('#add');
+    var $list        = $('#list')
+ 
+    function updateRows(conn) {
+      conn
+        .get({
+          todos: {description: sklad.DESC, index: 'description_search'}
+        }, function (err, data) {
+          if (err) { return console.error(err); }
+          
+          // TODO: do stuff here.
+        });
+    }
+ 
+    updateRows(conn);
+ 
+    $add.click(function () {
+      if (!$description.val().trim()) {
+        return;
+      }
+      conn.insert({
+        todos: [
+          { description: $description.val() }
+        ]
+      }, function (err, insertedKeys) {
+        $description.val('');
+        if (err) { return console.error(err); }
+        updateRows(conn);
+      })
+    });
+  });
+});
+      </code></pre>
+    </section>
+
+  </main-screen>
+
+</body>
+</html>
