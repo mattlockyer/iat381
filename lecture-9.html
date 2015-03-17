@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>IAT 381 - Mobile Application Design and Development</title>
+
+	<!-- Scripts -->
+	<script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+	<!-- Custom Components -->
+	<link rel="import" href="components/main-screen/main-screen.html">
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="main.css">
+
+</head>
+
+<body>
+
+	<main-screen menuTitle="Lecture 9" class="hidden">
+
+	<section name="Overview" icon="list">
+		<h3>
+			What's happening today:
+		</h3>
+		<ul>
+			<li>
+				Readings
+			</li>
+			<li>
+				Discussion: Tools, Libraries and Resources
+			</li>
+			<li>
+				Indexed DB Example
+			</li>
+			<li>
+				Skald Example
+			</li>
+			<li>
+			    Drive Realtime API Instructions
+			</li>
+			<li>
+			    Angular and Firebase Example
+			</li>
+		</ul>
+	</section>
+
+
+	<section name="Readings" icon="book">
+		
+		<h3>Required Readings</h3>
+		
+		<h4>Indexed DB</h4>
+		<ul>
+			<li>
+			<a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Basic_Concepts_Behind_IndexedDB">
+                Basic Concepts
+			</a>
+			</li>
+			<li>
+			<a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB">
+                Usage Overview
+			</a>
+			</li>
+			<li>
+			<a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API">
+                API Reference
+			</a>
+			</li>
+		</ul>
+		
+		<h4>Drive Realtime API</h4>
+		<ul>
+			<li>
+			<a href="https://developers.google.com/drive/realtime/overview">
+                Overview
+			</a>
+			</li>
+			<li>
+			<a href="https://developers.google.com/drive/realtime/realtime-quickstart">
+                Quickstart
+			</a>
+			</li>
+			<li>
+			<a href="https://developers.google.com/drive/realtime/reference/">
+                API Reference
+			</a>
+			</li>
+		
+		</ul>
+	</section>
+	
+	
+	<section name="IndexedDB" icon="group-work">
+
+	    <iframe height='268' scrolling='no' src='//codepen.io/mattlockyer/embed/WbYxBO/?height=268' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/mattlockyer/pen/WbYxBO/'>WbYxBO</a> by Matt Lockyer (<a href='http://codepen.io/mattlockyer'>@mattlockyer</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+	
+	</section>
+	
+	
+	
+	<section name="Drive RT API" icon="star">
+
+	    <h3>Google Drive Realtime API (Web)</h3>
+	    
+	    <p>This SDK allows you to store files on your user's Google Drive account.</p>
+	    
+	    <p>This is an OAuth API and you first must set up an account, projects and permissions in the Google Developer Console</p>
+	    
+	    <a href="https://console.developers.google.com/project">Developer Console</a>
+	    
+	    <p>Once you've created a project, go to 'APIs and Auth' and enable the 'Drive API' and 'Drive SDK'</p>
+	    
+	    <p>Next, click 'Credentials' and create a new OAuth Client ID</p>
+	    
+	    <p>Follow the prompt to configure the consent screen</p>
+	    
+	    <p>Application Type: Web Application</p>
+	    
+	    <p>Authorized Domains: http://localhost (for development)</p>
+	    
+	    <p>Create Client ID</p>
+	    
+	    <p>Follow the quickstart guide (starting at Step 2):</p>
+	    
+	    <a href="https://developers.google.com/drive/realtime/realtime-quickstart">Quickstart</a>
+	    
+	    <h3>Testing and building skills...</h3>
+	    
+	    <h3><a href="https://realtimeplayground.appspot.com/">Realtime API Playground</a></h3>
+	    
+	    <h3>Quickstart Video</h3>
+	    <iframe width="560" height="315" src="https://www.youtube.com/embed/Mlaov3J4hDA" frameborder="0" allowfullscreen></iframe>
+	    
+	     <h3>Office Hours</h3>
+	     <p>Discussion of Realtime API Concepts and Applications</p>
+	    <iframe width="560" height="315" src="https://www.youtube.com/embed/NUg7f2VSOmM" frameborder="0" allowfullscreen></iframe>
+	
+	</section>
+	
+	<section>
+	    
+	    <h3>What is Firebase?</h3>
+	    
+	    <p>Firebase is a backend as a service (BaaS) that offers similar functionality to the Drive Realtime API.</p>
+	    
+	    <p>They were recently bought by Google as well.</p>
+	    
+	    <a href="https://scotch.io/tutorials/build-a-real-time-scheduling-app-using-angularjs-and-firebase">Tutorial</a>
+	    
+	</section>
+
+	
+
+</main-screen>
+
+</body>
+</html>
